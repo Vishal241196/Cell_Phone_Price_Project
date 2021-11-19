@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Cell API</title>
+    <link rel="stylesheet"href="{{ url_for('static',filename='css/style.css')}}">
+<script type="text/javascript" src="{{ url_for('static',filename='script/script.js')}}">
+</script>
+
+
+</head>
+
+<body>
+    <div class="login">
+        <h1>Cell Phone Price Range Prediction</h1>        
+        <!-- Main Input For Receiving Query to Our ML -->
+
+        <form action="{{ url_for('predict')}}"method="post">  
+
+            <label for="battery_power">Battery Power:</label><br>      
+            <input type="text" name="battery_power" placeholder="Battery Power" required="required"/>
+
+            <label for="front_camera">Front Camera:</label><br>
+            <input type="text" name="front_camera" placeholder="Front Camera" required="required"/>
+
+            <label for="4g">4G:</label><br>
+            <input type="text" name="4g" placeholder="4G" required="required"/>
+
+            <label for="internal_memory">Internal Memory:</label><br>
+            <input type="text" name="internal_memory" placeholder="Internal Memory" required="required"/>
+
+            <label for="mobile_weight">Mobile Weight:</label><br>
+            <input type="text" name="mobile_weight" placeholder="Mobile Weight" required="required"/>
+
+            <label for="no_cores_processor">Processor:</label><br>
+            <input type="text" name="no_cores_processor" placeholder="Processor" required="required"/>
+
+            <label for="primary_camera">Primary Camera:</label><br>
+            <input type="text" name="primary_camera" placeholder="Primary Camera" required="required"/>
+
+            <label for="pixel_height_resolution">Pixel Height:</label><br>
+            <input type="text" name="pixel_height_resolution" placeholder="Pixel Height" required="required"/>
+
+            <label for="pixel_width_resolution">Pixel Width:</label><br>
+            <input type="text" name="pixel_width_resolution" placeholder="Pixel Width" required="required"/>
+
+            <label for="ram">Ram:</label><br>
+            <input type="text" name="ram" placeholder="Ram" required="required"/>
+
+            <label for="screen_height">Screen Height:</label><br>
+            <input type="text" name="screen_height" placeholder="Screen Height" required="required"/>
+
+            <label for="screen_width">Screen Width:</label><br>
+            <input type="text" name="screen_width" placeholder="Screen Width" required="required"/>
+            
+            <button type="submit" class="btn btn-primary btn=block btn-large">Predict</button>
+
+            
+        </form>
+     
+        <br>
+        <br>
+        {{ prediction }}
+
+        
+    
+    </div>
+
+
+</body>
+</html>
+    
